@@ -16,9 +16,9 @@ export const useApi = () => {
     login: async (email: string, password: string) => {
       try {
         const response = await api.post("/auth/login", { email, password });
-        return response;
+        return response.data;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
     },
 
@@ -27,7 +27,7 @@ export const useApi = () => {
         const response = await api.post("/auth/student/signup", props);
         return response;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
     },
 
@@ -36,8 +36,13 @@ export const useApi = () => {
         const response = await api.post("/auth/company/signup", props);
         return response;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
+    },
+
+    validate: async (token: string) => {
+      console.log(token);
+      return null;
     },
 
     get_student: async (id: number) => {
@@ -45,7 +50,7 @@ export const useApi = () => {
         const response = await api.get(`api/students/${id}`, config);
         return response;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
     },
 
@@ -57,7 +62,7 @@ export const useApi = () => {
         );
         return response;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
     },
 
@@ -66,7 +71,7 @@ export const useApi = () => {
         const response = await api.get(`api/company/${id}`, config);
         return response;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
     },
 
@@ -78,7 +83,7 @@ export const useApi = () => {
         );
         return response;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
     },
 
@@ -90,7 +95,7 @@ export const useApi = () => {
         );
         return response;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
     },
 
@@ -102,7 +107,7 @@ export const useApi = () => {
         );
         return response;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
     },
 
@@ -114,7 +119,7 @@ export const useApi = () => {
         );
         return response;
       } catch (err: any) {
-        return "something went wrong";
+        return err.response;
       }
     },
   };
