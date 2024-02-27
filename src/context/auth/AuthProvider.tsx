@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { AuthContext } from "./AuthContext";
 import { useApi } from "../../hooks/useApi";
@@ -13,10 +13,10 @@ interface AuthProviderProps {
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<User>(null!);
   const api = useApi();
-  /*  useEffect(() => {
+  {/* useEffect(() => {
     const validadeToken = async () => {
       const storageData = localStorage.getItem('token');
-      if (storageData) {
+     if (storageData) {
         const response = await api.validate(storageData);
         if (response.details === 'Invalid Token') {
           setUser(null!);
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     };
 
     validadeToken();
-  }, []); */
+  }, []);*/}
 
   const login = async (email: string, password: string) => {
     const response = await api.login(email, password);
