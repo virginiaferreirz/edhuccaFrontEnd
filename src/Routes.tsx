@@ -29,13 +29,13 @@ function AppRoutes(){
                     <Route path="/Sobre" element={<Sobre/>}></Route>
                     
                     {/* estudante */}
-                    <Route path="/PersonalProfile" element={<PersonalProfile name={""} email={""} phone={""} cpf={0} gender={""} dateOfBirth={0}/>}></Route>
-                    <Route path="/ProfileAddress" element={<ProfileAddress address={""} number={0} district={""} cep={0} city={""} state={""} complementOp={""}/>}></Route>
+                    <Route path="/PersonalProfile" element={<PersonalProfile/>}></Route>
+                    <Route path="/ProfileAddress" element={<ProfileAddress/>}></Route>
                     <Route path="/MyVacancy" element={<MyVacancy/>}></Route>
                     
                     {/* empresa */}
-                    <Route path="/PersonalProfileComp" element={<PersonalProfileComp name={""} email={""} phone={""} cpf={0} gender={""} dateOfBirth={0}/>}></Route>
-                    <Route path="/ProfileAddressComp" element={<ProfileAddressComp address={""} number={0} district={""} cep={0} city={""} state={""} complementOp={""}/>}></Route>
+                    <Route path="/PersonalProfileComp" element={<PersonalProfileComp />}></Route>
+                    <Route path="/ProfileAddressComp" element={<ProfileAddressComp/>}></Route>
                     <Route path="/VacancyComp" element={<VacancyComp/>}></Route>
                     <Route path="/Anuncio" element={<Anuncio/>}></Route>
                     

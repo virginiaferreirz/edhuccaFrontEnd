@@ -12,7 +12,7 @@ const JobCard = ({ company, name, imageUrl }) => {
         <p className="mb-3">{company}</p>
         <Link
           className="bg-blue-400 text-white px-24 p-2 rounded-md hover:bg-blue-600 transition" to={''}>
-          Saiba mais
+          Cadrastre-se
         </Link>
       </div>
     </div>

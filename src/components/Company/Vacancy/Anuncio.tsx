@@ -31,27 +31,27 @@ function Anuncio()  {
             className="mt-1 p-2 w-full border rounded-lg bg-white"
             placeholder="Digite o titulo da vaga"
             required />
-          <label htmlFor="name" className=" bg-white block text-sm font-medium text-gray-600 mt-2">Competencia</label>
+          <label htmlFor="competencia" className=" bg-white block text-sm font-medium text-gray-600 mt-2">Competencia</label>
           <input
             type="text"
             id="name"
-            {...register("name" )}
+            {...register("competencia" )}
             className="mt-1 p-2 w-full border rounded-lg bg-white"
             placeholder="Digite competencias"
             required />
-          <label htmlFor="name" className=" bg-white block text-sm font-medium text-gray-600 mt-2">Cursos</label>
+          <label htmlFor="cursos" className=" bg-white block text-sm font-medium text-gray-600 mt-2">Cursos</label>
           <input
             type="text"
             id="name"
-            {...register("name" )}
+            {...register("cursos" )}
             className="mt-1 p-2 w-full border rounded-lg bg-white"
             placeholder="Digite Cursos"
             required />
-          <label htmlFor="name" className=" bg-white block text-sm font-medium text-gray-600 mt-2">Descrição</label>
+          <label htmlFor="descrição" className=" bg-white block text-sm font-medium text-gray-600 mt-2">Descrição</label>
           <input
             type="text"
             id="name"
-            {...register("name" )}
+            {...register("descrição" )}
             className="mt-1 p-4 w-full border rounded-lg bg-white"
             placeholder="Digite a descrição da vaga"
             required />

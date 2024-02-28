@@ -29,7 +29,7 @@ function PersonalProfile()  {
             id="name"
             {...register("name" )}
             className="mt-1 p-2 w-full border rounded-lg bg-white"
-            placeholder="Digite o nome da empresa"
+            placeholder="Digite o nome"
             required />
           <label htmlFor="email" className="bg-white block text-sm font-medium text-gray-600 pt-2">E-mail</label>
           <input
