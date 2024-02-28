@@ -1,16 +1,13 @@
-import './App.css'
-import React from 'react'
-import Footer from './components/Footer'
-import Contact from './components/Contact'
-import AppRoutes from './Routes'
+import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import { Router } from "./Router";
 
 const App = () => {
-  return(
-        <>
-          <AppRoutes/>
-          <Contact/>
-          <Footer/>
-        </>
-  )
-}
-export default App
+  return <RouterProvider router={Router} fallbackElement={<p>loading...</p>} />;
+  // <>
+  //    <AppRoutes />
+  //    <Contact />
+  //    <Footer />
+  //  </>
+};
+export default App;

@@ -1,8 +1,7 @@
 import logo from "../../img/trabalho.png";
 import { NavbarHome } from "./NavBarHome";
-import { Link } from "react-router-dom";
 
-export const HomePage = () => {
+export const About = () => {
   return (
     <>
       <NavbarHome />
@@ -19,23 +18,15 @@ export const HomePage = () => {
             jovens talentos, e apoiar o desenvolvimento empresarial pela
             otimização da busca de profissionais
           </p>
-          <button className="mt-10 bg-gradient-to-r from-blue-300 via-green-400 to-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mr-6">
-            <Link to={"/login"} className="bg-transparent px-6">
-              Login
-            </Link>
-          </button>
           <button className="mt-10 bg-gradient-to-r from-blue-300 via-green-400 to-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
-            <Link to={"/signup"} className="bg-transparent px-2">
-              Cadraste-se
-            </Link>
+            <a
+              href="http://www.edhucca.org.br/"
+              target="_blank"
+              className="bg-transparent"
+            >
+              EDHUCCA OFICIAL
+            </a>
           </button>
-          <a
-            href="http://www.edhucca.org.br/"
-            target="_block"
-            className="block pt-8 text-sm text-gray-600"
-          >
-            Visite o site oficial do EDHUCCA
-          </a>
         </div>
         <div>
           <img className="bg-transparent pr-32" src={logo} alt="logo" />

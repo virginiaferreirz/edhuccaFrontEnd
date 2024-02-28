@@ -1,0 +1,94 @@
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  createBrowserRouter,
+} from "react-router-dom";
+import React from "react";
+import { PersonalProfile } from "./components/Student/Profile/PersonalProfile";
+import ProfileAddress from "./components/Student/Profile/ProfileAddress";
+import AllVacancy from "./Pages/AllVacancy";
+import MyVacancy from "./components/Student/Vacancy/MyVacancy";
+import Sobre from "./Pages/Home/Sobre";
+import HomePage from "./Pages/Home/HomePage";
+import Login from "./Pages/Login";
+import Cadastro from "./Pages/Signup/Cadrastro";
+import ProfileAddressComp from "./components/Company/Profile/ProfileAddressComp";
+import PersonalProfileComp from "./components/Company/Profile/PersonalProfileComp";
+import VacancyComp from "./components/Company/Vacancy/VacancyComp";
+import Anuncio from "./components/Company/Vacancy/Anuncio";
+import PersonalProfileAdm from "./components/Admin/Profile/PersonalProfileComp";
+import CadrastroAdm from "./components/Admin/Cadrastros/CadrastroAdm";
+import Competencia from "./components/Admin/Cadrastros/Competencia";
+
+export const AppRoutes = () => {
+  return (
+    <Router>
+      <Routes>
+        {/* publica */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Cadastro />} />
+        <Route path="/AllVacancy" element={<AllVacancy />} />
+        <Route path="/Sobre" element={<Sobre />} />
+          <>
+            <Route
+              path="/student-personal-profile"
+              element={<PersonalProfile />}
+            />
+            <Route
+              path="/student-profile-address"
+              element={
+                <ProfileAddress
+                  address={""}
+                  number={0}
+                  district={""}
+                  cep={0}
+                  city={""}
+                  state={""}
+                  complementOp={""}
+                />
+              }
+            />
+            <Route path="/my-jobs" element={<MyVacancy />} />
+          </>
+        {/* empresa */}
+        <Route
+          path="/company-personal-profile"
+          element={
+            <PersonalProfileComp
+              name={""}
+              email={""}
+              phone={""}
+              cpf={0}
+              gender={""}
+              dateOfBirth={0}
+            />
+          }
+        />
+        <Route
+          path="/company-address"
+          element={
+            <ProfileAddressComp
+              address={""}
+              number={0}
+              district={""}
+              cep={0}
+              city={""}
+              state={""}
+              complementOp={""}
+            />
+          }
+        />
+        <Route path="/VacancyComp" element={<VacancyComp />} />
+        <Route path="/Anuncio" element={<Anuncio />} />
+        {/* adm */}
+        <Route path="/PersonalProfileAdm" element={<PersonalProfileAdm />} />
+        <Route path="/CadrastroAdm" element={<CadrastroAdm />} />
+        <Route path="/Competencia" element={<Competencia />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Routes>
+    </Router>
+  );
+}
+

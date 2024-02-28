@@ -1,8 +1,11 @@
 import axios from "axios";
 import { StudentSignup } from "../types/studentSignup";
 import { CompanySignup } from "../types/companySignup";
+import { StudentProfileUpdateForm } from "../types/studentProfile";
+import { JobForm } from "../types/job";
 
 const api = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   timeout: 10000,
 });
 
@@ -23,7 +26,7 @@ export const useApi = () => {
 
     student_signup: async (props: StudentSignup) => {
       try {
-        const response = await api.post("/auth/student/signup", props);
+        const response = await api.post("/auth/student/register", props);
         return response;
       } catch (err: any) {
         return err.response;
@@ -32,7 +35,7 @@ export const useApi = () => {
 
     company_signup: async (props: CompanySignup) => {
       try {
-        const response = await api.post("/auth/company/signup", props);
+        const response = await api.post("/auth/company/register", props);
         return response;
       } catch (err: any) {
         return err.response;
@@ -47,6 +50,22 @@ export const useApi = () => {
     get_student: async (id: number) => {
       try {
         const response = await api.get(`api/students/${id}`, config);
+        return response;
+      } catch (err: any) {
+        return err.response;
+      }
+    },
+
+    update_student: async (
+      id: number,
+      { name, email, cpf, birth, phone, gender }: StudentProfileUpdateForm
+    ) => {
+      try {
+        const response = await api.patch(
+          `api/students/${id}`,
+          { name, email, cpf, birth, phone, gender },
+          config
+        );
         return response;
       } catch (err: any) {
         return err.response;
@@ -116,6 +135,43 @@ export const useApi = () => {
           `api/jobs?page=${page}&size=${size ?? 20}`,
           config
         );
+        return response;
+      } catch (err: any) {
+        return err.response;
+      }
+    },
+
+    post_job: async (job: JobForm) => {
+      try {
+        const response = await api.post("/jobs/create", { job }, config);
+        return response;
+      } catch (err: any) {
+        return err.response;
+      }
+    },
+    get_courses: async (page?: number, size?: number) => {
+      try {
+        const response = await api.get(
+          `api/jobs?page=${page}&size=${size ?? 20}`,
+          config
+        );
+        return response;
+      } catch (err: any) {
+        return err.response;
+      }
+    },
+    get_skills: async (page?: number, size?: number) => {
+      let response;
+      try {
+        if (page || size) {
+          response = await api.get(
+            `api/jobs?page=${page ?? 0}&size=${size ?? 20}`,
+            config
+          );
+        } else {
+          response = await api.get("api/jobs");
+        }
+
         return response;
       } catch (err: any) {
         return err.response;

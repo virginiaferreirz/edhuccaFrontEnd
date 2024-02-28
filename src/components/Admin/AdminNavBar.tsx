@@ -4,29 +4,24 @@ import { FaTimes } from "react-icons/fa";
 import { TfiMenu } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 
-const NavbarCompany = () => {
+export const AdminNavBar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const content = (
     <>
       <div className="lg:hidden block absolute top-10 w-full left-0 right-0 transition font-bold bg-white">
         <ul className="text-center text-x1 p-20 bg-white">
-          <Link to={"/sobre"}>
+          <Link to={"/Sobre"}>
             <li className="my-4 py-4 border-b houver:bg-slate-400 houver:rounded">
               Quem somos?
             </li>
           </Link>
-          <Link to={"/anuncio-de-vagas"}>
+          <Link to={"CadrastroAdm"}>
             <li className="my-4 py-4 border-b houver:bg-slate-400 houver:rounded">
-              Anunciar
+              Cadrastros
             </li>
           </Link>
-          <Link to={"/minhas-vagas-empresa"}>
-            <li className="my-4 py-4 border-b houver:bg-slate-400 houver:rounded">
-              Minhas Vagas
-            </li>
-          </Link>
-          <Link to={"/perfil-da-empresa"}>
+          <Link to={"/PersonalProfileAdm"}>
             <li className="my-4 py-4 border-b  houver:bg-slate-400 houver:rounded">
               Perfil
             </li>
@@ -50,17 +45,12 @@ const NavbarCompany = () => {
                   Quem somos?
                 </li>
               </Link>
-              <Link to={"/anuncio-de-vagas"}>
+              <Link to={"/CadrastroAdm"}>
                 <li className="bg-white hover:text-emerald-400 transition border-b-2 border-transparent hover:border-emerald-400 cursor-pointer">
-                  Anunciar
+                  Cadrastros
                 </li>
               </Link>
-              <Link to={"/minhas-vagas-empresa"}>
-                <li className="bg-white hover:text-emerald-400 transition border-b-2 border-transparent hover:border-emerald-400 cursor-pointer">
-                  Minhas Vagas
-                </li>
-              </Link>
-              <Link to={"/perfil-da-empresa"}>
+              <Link to={"/PersonalProfileAdm"}>
                 <li className="bg-white hover:text-emerald-400 transition border-b-2 border-transparent hover:border-emerald-400 cursor-pointer">
                   Perfil
                 </li>
@@ -79,4 +69,3 @@ const NavbarCompany = () => {
     </div>
   );
 };
-export default NavbarCompany;

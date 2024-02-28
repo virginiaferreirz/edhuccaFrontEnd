@@ -6,10 +6,4 @@ export type StudentSignup = {
     cpf: string;
     gender: string;
     birth: Date;
-    number: string;
-    bairro: string;
-    cep: string;
-    city: string;
-    uf: string;
-    complement: string;
 }

@@ -5,10 +5,4 @@ export type CompanySignup = {
     phone: string;
     cnpj: string;
     description: string;
-    number: string;
-    bairro: string;
-    cep: string;
-    city: string;
-    uf: string;
-    complement: string;
 }

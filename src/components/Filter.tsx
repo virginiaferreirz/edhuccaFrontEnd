@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const Filter = ({ onFilter }) => {
+const Filter = (onFilter: any) => {
   const [filter, setFilter] = useState('');
 
   const handleFilterChange = (e: { target: { value: any; }; }) => {
